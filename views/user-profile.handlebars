@@ -1,0 +1,20 @@
+<div class="user-wrapper">
+    <aside>
+        <h2>Hello, {{user}}</h2>
+        <img src="/assets/icons/user-icon.svg" alt="User image"/>
+        <a href="./user-profile/images" class="btn-nav secondary-cta">upload profile photo</a>
+        <a href="./dashboard" class="btn-nav cta">create new post</a>
+    </aside>
+
+    <section class="user-posts">
+        <ol class="feed-list">
+            {{#if posts.length}}
+                {{#each posts as |post|}}
+                <li>
+                {{> post-info post}}
+                </li>
+                {{/each}}
+            {{/if}}    
+        </ol>
+    </section>
+</div>
